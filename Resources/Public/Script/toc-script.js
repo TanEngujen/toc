@@ -19,7 +19,7 @@
   }
 
   // New Toggle Style
-  if (document.querySelector('#toc').classList.contains('togglestyle')) {
+  if (document.querySelector('#toc') && document.querySelector('#toc').classList.contains('togglestyle')) {
     var deepLists = document.querySelectorAll('#toc ol ol');
     deepLists.forEach(element => {
       element.classList.add('hide');
@@ -36,7 +36,7 @@
   }
 
   // Jump to top
-  if (document.querySelector('#toc').classList.contains('toplink')) {
+  if (document.querySelector('#toc') && document.querySelector('#toc').classList.contains('toplink')) {
     var scrollToTopBtn = document.querySelector("#toctop")
     var rootElement = document.documentElement
 
@@ -59,7 +59,7 @@
   }
 
   // Speaking URL hashes
-  if (document.querySelector('#toc').classList.contains('speaking-urls')) {
+  if (document.querySelector('#toc') && document.querySelector('#toc').classList.contains('speaking-urls')) {
     var links = document.querySelectorAll('#toc li a');
     links.forEach(element => {
       var slug = element.querySelector('span').getAttribute('data-slug');
@@ -89,7 +89,7 @@
   });
 
   // Browserhistory
-  if (document.querySelector('#toc').classList.contains('browserhistory')) {
+  if (document.querySelector('#toc') && document.querySelector('#toc').classList.contains('browserhistory')) {
     var stateObj = { state: $(this.hash) };
     history.pushState(stateObj, '', $(this.hash));
   }
